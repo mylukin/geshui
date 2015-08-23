@@ -8,8 +8,8 @@ android {
         applicationId "net.lukin.geshui"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.4"
         manifestPlaceholders = [
                 UMENG_APPKEY_VALUE : project.UMENG_APPKEY_VALUE,
                 UMENG_CHANNEL_VALUE: 'yingyongbao',
