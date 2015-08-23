@@ -171,7 +171,7 @@ public class MyApplication extends Application {
             taxRate = 0.45;
             taxQuick = 13505;
         }
-        return taxableIncome * taxRate - taxQuick;
+        return Math.max(taxableIncome * taxRate - taxQuick, 0);
     }
 
     /**
@@ -233,7 +233,7 @@ public class MyApplication extends Application {
             taxQuick = 13505;
         }
 
-        return taxableIncome * taxRate - taxQuick;
+        return Math.max(taxableIncome * taxRate - taxQuick, 0);
     }
 
 
