@@ -12,7 +12,7 @@ android {
         versionName "1.0"
         manifestPlaceholders = [
                 UMENG_APPKEY_VALUE : project.UMENG_APPKEY_VALUE,
-                UMENG_CHANNEL_VALUE: 'develop',
+                UMENG_CHANNEL_VALUE: 'yingyongbao',
                 BAIDU_APPKEY_VALUE : project.BAIDU_APPKEY_VALUE
         ]
     }
