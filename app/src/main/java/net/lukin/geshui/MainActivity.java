@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                     // 税前收入
                     pre_tax_income = income;
                     // 税后收入
-                    after_tax_income = income - insure - taxValue;
+                    after_tax_income = Math.max(income - insure - taxValue, 0);
                 }
                 // 反推税前收入
                 else if (click_btn.getId() == R.id.button_inverse_pre_tax_income) {
