@@ -10,6 +10,11 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [
+                UMENG_APPKEY_VALUE : project.UMENG_APPKEY_VALUE,
+                UMENG_CHANNEL_VALUE: 'develop',
+                BAIDU_APPKEY_VALUE : project.BAIDU_APPKEY_VALUE
+        ]
     }
     buildTypes {
         release {

@@ -332,19 +332,4 @@ public class MyApplication extends Application {
         public double company_sum_val;
     }
 
-    /**
-     * 反推收入公式
-     *
-     * income = 80;
-     * taxValue = 10;
-     * baoxian = 10;
-     * total = 100;
-     * range = 0.1;
-     *
-     * result = total/1-0.1;
-     *
-     *
-     */
-
-
 }
