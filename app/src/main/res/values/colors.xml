@@ -1,0 +1,7 @@
+<resources>
+    <color name="btn_red_bg">#ba130c</color>
+    <color name="btn_pressed_red_bg">#6b130c</color>
+    <color name="btn_blue_bg">#2c51ff</color>
+    <color name="btn_pressed_blue_bg">#223a92</color>
+    <color name="black_bg">#000000</color>
+</resources>

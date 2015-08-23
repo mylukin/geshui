@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">个税计算器</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_title">新版个税计算器</string>
+    <string name="input_salary">请输入税前月薪或税后月薪</string>
+    <string name="social_security_and_housing_fund_option"><![CDATA[社保及公积金选项 >]]></string>
+    <string name="select_cities">上海</string>
+    <string name="calculate_after_tax_income">计算税后收入</string>
+    <string name="inverse_pre_tax_income">反推税前收入</string>
+    <string name="pre_tax_income">税前收入：</string>
+    <string name="after_tax_income">税后收入：</string>
+    <string name="text_space"></string>
+    <string name="pay_tax_value">缴纳个税：</string>
+    <string name="full_insurance">三险一金：</string>
+    <string name="title_activity_city_select">社保公积金选项</string>
+    <string name="hello_world">Hello world!</string>
+</resources>

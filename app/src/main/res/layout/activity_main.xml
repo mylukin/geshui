@@ -1,0 +1,424 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/input_salary"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.14"
+                android:ems="10"
+                android:focusable="true"
+                android:hint="@string/input_salary"
+                android:inputType="number"
+                android:numeric="integer" />
+
+            <RelativeLayout
+                android:layout_width="310dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.14">
+
+                <Button
+                    android:id="@+id/select_cities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:background="#00ffffff"
+                    android:text="@string/select_cities"
+                    android:textColor="@drawable/btn_select_cities" />
+
+                <Button
+                    android:id="@+id/select_base_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="#00ffffff"
+                    android:text="@string/social_security_and_housing_fund_option"
+                    android:textColor="@drawable/btn_select_cities" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.14">
+
+                <Button
+                    android:id="@+id/button_calculate_after_tax_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/btn_calculate_after_tax_income"
+                    android:clickable="true"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/calculate_after_tax_income"
+                    android:textColor="#ffffff" />
+
+                <Button
+                    android:id="@+id/button_inverse_pre_tax_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="51dp"
+                    android:layout_marginStart="51dp"
+                    android:layout_toEndOf="@+id/button_calculate_after_tax_income"
+                    android:layout_toRightOf="@+id/button_calculate_after_tax_income"
+                    android:background="@drawable/btn_inverse_pre_tax_income"
+                    android:clickable="true"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/inverse_pre_tax_income"
+                    android:textColor="#ffffff" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/table_view_result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp">
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#CACDD1" />
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.14"
+                    android:columnCount="4"
+                    android:columnOrderPreserved="true"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:rowCount="2"
+                    android:layout_marginBottom="5dp"
+                    android:rowOrderPreserved="false">
+
+                    <!-- 计算结果 -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:text="@string/pre_tax_income" />
+
+                    <TextView
+                        android:id="@+id/text_pre_tax_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_row="0"
+                        android:minWidth="80dp"
+                        android:text="@string/text_space" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_row="0"
+                        android:text="@string/after_tax_income" />
+
+                    <TextView
+                        android:id="@+id/text_after_tax_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="3"
+                        android:layout_row="0"
+                        android:minWidth="100dp"
+                        android:text="@string/text_space" />
+
+                    <!-- 计算结果 -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:text="@string/pay_tax_value" />
+
+                    <TextView
+                        android:id="@+id/text_pay_tax_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_row="1"
+                        android:minWidth="80dp"
+                        android:text="@string/text_space" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_row="1"
+                        android:text="@string/full_insurance" />
+
+                    <TextView
+                        android:id="@+id/text_full_insurance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="3"
+                        android:layout_row="1"
+                        android:minWidth="100dp"
+                        android:text="@string/text_space" />
+
+
+                </GridLayout>
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:background="#CACDD1">
+
+                    <TableRow
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginTop="1dp">
+
+                        <TextView
+                            android:layout_width="160dp"
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:text="社保及公积金" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="1dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingRight="10dp"
+                            android:text="个人" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="单位" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:text="养老" />
+
+                        <TextView
+                            android:id="@+id/private_yanglao"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="1dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingRight="10dp"
+                            android:text="@string/text_space" />
+
+                        <TextView
+                            android:id="@+id/company_yanglao"
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="@string/text_space" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:text="医疗" />
+
+                        <TextView
+                            android:id="@+id/private_yiliao"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="1dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingRight="10dp"
+                            android:text="@string/text_space" />
+
+                        <TextView
+                            android:id="@+id/company_yiliao"
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="@string/text_space" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:text="失业" />
+
+                        <TextView
+                            android:id="@+id/private_shiye"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="1dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingRight="10dp"
+                            android:text="@string/text_space" />
+
+                        <TextView
+                            android:id="@+id/company_shiye"
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="@string/text_space" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:text="工伤" />
+
+                        <TextView
+                            android:id="@+id/private_gongshang"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="1dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingRight="10dp"
+                            android:text="@string/text_space" />
+
+                        <TextView
+                            android:id="@+id/company_gongshang"
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="@string/text_space" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:text="生育" />
+
+                        <TextView
+                            android:id="@+id/private_shengyu"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="1dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingRight="10dp"
+                            android:text="@string/text_space" />
+
+                        <TextView
+                            android:id="@+id/company_shengyu"
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="@string/text_space" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:text="公积金" />
+
+                        <TextView
+                            android:id="@+id/private_gongjijin"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="1dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingRight="10dp"
+                            android:text="@string/text_space" />
+
+                        <TextView
+                            android:id="@+id/company_gongjijin"
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="@string/text_space" />
+                    </TableRow>
+
+                    <TableRow android:layout_marginTop="1dp">
+
+                        <TextView
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:text="总计" />
+
+                        <TextView
+                            android:id="@+id/private_sum_val"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="1dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingRight="10dp"
+                            android:text="@string/text_space" />
+
+                        <TextView
+                            android:id="@+id/company_sum_val"
+                            android:layout_height="30dp"
+                            android:background="#ffffff"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="@string/text_space" />
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
