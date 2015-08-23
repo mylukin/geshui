@@ -14,4 +14,5 @@
     <string name="full_insurance">三险一金：</string>
     <string name="title_activity_city_select">社保公积金选项</string>
     <string name="hello_world">Hello world!</string>
+    <string name="text_copyright"><![CDATA[© 2015 lukin.cn]]></string>
 </resources>
