@@ -160,7 +160,7 @@ public class MyApplication extends Application {
                 0.20, 0.09, 0, 0.015, 0.01, 0.01, 0.08
         ));
 
-        cities.put(224, new CityModel(
+        cities.put(315, new CityModel(
                 // 城市：索引，名称，个税起征点
                 "Nanjing", "南京", 3500,
                 // 社保：上限，下限
