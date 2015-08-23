@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CitySelectActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
             }
         };
@@ -93,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
         // 获取显示结果布局
         table_view_result = (LinearLayout) findViewById(R.id.table_view_result);
-        table_view_result.setVisibility(View.GONE);
 
         // 定义计算税收事件
         View.OnClickListener calcTaxBtnOnClickListener = new View.OnClickListener() {

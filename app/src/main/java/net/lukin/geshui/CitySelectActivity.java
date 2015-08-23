@@ -43,6 +43,7 @@ public class CitySelectActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(CitySelectActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("select_city", listCities.get(position));
                 startActivity(intent);
             }
